@@ -19,5 +19,5 @@ ln -sf /data/gogs/data ./data
 # Backward Compatibility with Gogs Container v0.6.15
 ln -sf /data/git /home/git
 
-chown -R git:git /data /app/gogs ~git/
-chmod 0755 /data /data/gogs ~git/
+#chown -R git:git /data /app/gogs ~git/
+#chmod 0755 /data /data/gogs ~git/
