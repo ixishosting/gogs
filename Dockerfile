@@ -7,9 +7,11 @@ RUN chmod +x /usr/sbin/gosu \
  && apk add --no-cache gogs --repository http://dl-3.alpinelinux.org/alpine/edge/community/ --allow-untrusted
 
 ENV GOGS_CUSTOM /data/gogs
-
 RUN mkdir -p /app/gogs
+
+COPY . /app/gogs/
 WORKDIR /app/gogs/
+
 
 RUN adduser -H -D -g 'Gogs Git User' git -h /data/git -s /bin/bash && passwd -u git
 RUN echo "export GOGS_CUSTOM=${GOGS_CUSTOM}" >> /etc/profile
