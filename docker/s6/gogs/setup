@@ -15,6 +15,7 @@ cd /app/gogs
 # Link volumed data with app data
 ln -sf /data/gogs/log  ./log
 ln -sf /data/gogs/data ./data
+ln -sf /data/gogs/conf ./conf
 
 # Backward Compatibility with Gogs Container v0.6.15
 ln -sf /data/git /home/git
