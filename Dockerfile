@@ -17,6 +17,7 @@ RUN adduser -H -D -g 'Gogs Git User' git -h /data/git -s /bin/bash && passwd -u 
 RUN echo "export GOGS_CUSTOM=${GOGS_CUSTOM}" >> /etc/profile
 RUN ln -s /usr/share/webapps/gogs/public /app/gogs/
 RUN ln -s /usr/share/webapps/gogs/templates /app/gogs/
+RUN ln -s /usr/bin/gogs /app/gogs/
 
 # Configure LibC Name Service
 COPY docker/nsswitch.conf /etc/nsswitch.conf
