@@ -8,7 +8,7 @@ RUN chmod +x /usr/sbin/gosu \
 
 ENV GOGS_CUSTOM /data/gogs
 
-RUN mkdir /app/gogs
+RUN mkdir -p /app/gogs
 WORKDIR /app/gogs/
 
 RUN adduser -H -D -g 'Gogs Git User' git -h /data/git -s /bin/bash && passwd -u git
