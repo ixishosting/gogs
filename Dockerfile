@@ -1,10 +1,10 @@
-FROM alpine:3.4
+FROM alpine:3.5
 
 # Install system utils & Gogs runtime dependencies
 ADD https://github.com/tianon/gosu/releases/download/1.7/gosu-amd64 /usr/sbin/gosu
 RUN chmod +x /usr/sbin/gosu \
  && apk --update --no-cache --no-progress add ca-certificates bash git linux-pam s6 curl openssh socat ansible \
- && apk add --no-cache gogs --repository http://dl-3.alpinelinux.org/alpine/edge/community/ --allow-untrusted
+ && apk add --no-cache gogs --repository http://dl-3.alpinelinux.org/alpine/v3.5/community/ --allow-untrusted
 
 ENV GOGS_CUSTOM /data/gogs
 RUN mkdir -p /app/gogs
